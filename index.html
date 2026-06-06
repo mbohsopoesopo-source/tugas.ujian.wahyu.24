@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas Akhir — Portofolio Siswa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,700;0,900;1,700&family=DM+Sans:wght=300;400;500&family=Space+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <a href="https://youtube.com/@wahyupratama-g5s?si=GEu9nqLf_k0QlBwd" target="_blank" class="youtube-float-btn" title="Kunjungi Channel YouTube Saya">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+    <header>
+        <nav>
+            <div class="logo">Portofolio.</div>
+            <ul>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#game-section">Mini Game</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-label">Selamat Datang</div>
+            <h1>Kreativitas Tanpa <em>Batas</em></h1>
+            <p class="hero-desc">Saya seorang Web Developer pemula yang berfokus membangun portofolio interaktif dan fungsional.</p>
+            <div class="hero-cta">
+                <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+                <a href="#game-section" class="btn btn-outline">Mainkan Game</a>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat"><span>4+</span>
+                <p>Mini Games</p>
+            </div>
+            <div class="stat"><span>100%</span>
+                <p>Responsif HP</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="tentang">
+        <div class="about-text">
+            <div class="section-label">Tentang Saya</div>
+            <h2 class="section-title">Membangun Pengalaman Digital Eksklusif</h2>
+            <p>Saya suka bereksperimen dengan desain modern, tata letak yang bersih, serta fitur-fitur permainan berbasis web menggunakan HTML, CSS standar, dan Vanilla JavaScript.</p>
+        </div>
+        <div class="profile-card">
+            <div class="avatar-container">
+                <img src="WhatsApp Image 2026-05-22 at 21.24.25.jpeg" alt="Foto Profil" class="avatar-img" />
+            </div>
+            <div class="profile-name">Nama Anda</div>
+            <div class="profile-role">Web Developer / Student</div>
+            <div class="profile-info">
+                <div class="info-row"><span class="label">Status</span><span class="value">Siswa / Pelajar</span></div>
+                <div class="info-row"><span class="label">Keahlian</span><span class="value">HTML, CSS, JavaScript</span></div>
+            </div>
+
+            <div class="profile-socials">
+                <a href="https://youtube.com/@wahyupratama-g5s?si=GEu9nqLf_k0QlBwd" target="_blank" class="youtube-profile-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    <span>Kunjungi Channel YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyek">
+        <div class="projects-header">
+            <div>
+                <div class="section-label">Showcase</div>
+                <h2 class="section-title">Proyek Unggulan</h2>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="card-number">01</div>
+                <div class="card-tag">Web App</div>
+                <h3 class="card-title">Mini Games Playground</h3>
+                <p class="card-desc">Kumpulan game kasual interaktif berbasis web (Kuis, Ular, Memori, dan Ketik) yang dibangun menggunakan Vanilla JavaScript dan CSS Modern.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="card-number">02</div>
+                <div class="card-tag">Hardware / IoT</div>
+                <h3 class="card-title">Arduino Smart Car & Line Follower</h3>
+                <p class="card-desc">Robot pintar berbasis Arduino Uno dengan sistem sensor ultrasonik, modul pelacak jalur inframerah, dan motor penggerak presisi.</p>
+                <div class="project-media-gallery">
+                    <img src="WhatsApp Image 2026-06-06 at 10.36.18.jpeg" alt="Robot Line Follower" class="project-img-item" />
+                    <img src="WhatsApp Image 2026-06-06 at 10.36.19.jpg" alt="Robot Sensor" class="project-img-item" />
+                    <video src="WhatsApp Video 2026-06-06 at 10.35.39.mp4" controls class="project-video-item"></video>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-number">03</div>
+                <div class="card-tag">Robotics</div>
+                <h3 class="card-title">Mechanical 7-Segment Servo Clock</h3>
+                <p class="card-desc">Jam dinding digital 7-segment unik dengan sistem pergerakan mekanik di mana setiap segmen angkanya digerakkan secara individual menggunakan motor servo mikro.</p>
+                <div class="project-media-gallery">
+                    <video src="WhatsApp Video 2026-06-06 at 10.36.18.mp4" controls class="project-video-item"></video>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-number">04</div>
+                <div class="card-tag">Audio Engineering</div>
+                <h3 class="card-title">Miniature Sound System & Amplifier</h3>
+                <p class="card-desc">Pengembangan miniatur sound system kustom lengkap dengan tumpukan boks speaker terstruktur dan sirkuit penguat audio aktif.</p>
+                <div class="project-media-gallery">
+                    <img src="WhatsApp Image 2026-04-10 at 14.01.29.jpeg" alt="Miniature Sound" class="project-img-item" />
+                    <video src="WhatsApp Video 2026-06-06 at 10.35.48.mp4" controls class="project-video-item"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game-section">
+        <div class="section-label">Interactive Playground</div>
+        <h2 class="section-title">Istirahat Sejenak & Mainkan Game</h2>
+
+        <div class="game-tabs">
+            <button class="game-tab active" onclick="switchGame(0)">Game Kuis</button>
+            <button class="game-tab" onclick="switchGame(1)">Game Ular (Snake)</button>
+            <button class="game-tab" onclick="switchGame(2)">Memory Game</button>
+            <button class="game-tab" onclick="switchGame(3)">Typing Game</button>
+        </div>
+
+        <div class="game-panel active" id="game-quiz">
+            <div class="quiz-container">
+                <div class="quiz-meta">
+                    <span class="quiz-score-display">Skor: <span id="quizScore">0</span></span>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar" id="quizBar" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div id="quizBox">
+                    <div class="quiz-question" id="quizQuestion">Memuat pertanyaan...</div>
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <div class="quiz-feedback" id="quizFeedback"></div>
+                    <button class="btn btn-primary quiz-next" id="quizNextBtn" onclick="nextQuestion()">Pertanyaan Selanjutnya</button>
+                </div>
+                <div id="quizResult" class="quiz-result" style="display: none;">
+                    <div class="quiz-result-score" id="quizFinalScore">0</div>
+                    <div class="quiz-result-label">Skor Akhir Anda</div>
+                    <p class="quiz-result-msg" id="quizResultMsg"></p>
+                    <button class="btn btn-outline quiz-restart" onclick="restartQuiz()">Main Lagi</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-panel" id="game-snake">
+            <div class="snake-wrapper">
+                <canvas id="snakeCanvas" width="400" height="400"></canvas>
+                <div class="snake-info">
+                    <h3>Aturan Game:</h3>
+                    <div class="snake-stat">Skor Saat Ini: <span id="snakeScore">0</span></div>
+                    <div class="snake-stat">Status: <span id="snakeStatus" style="color: var(--gold);">Berhenti</span></div>
+
+                    <div class="snake-controls">
+                        <button class="btn-control play" id="btnPlay">▶ Play</button>
+                        <button class="btn-control stop" id="btnStop">⏸ Stop</button>
+                        <button class="btn-control reset" id="btnReset">🔄 Reset</button>
+                    </div>
+
+                    <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; margin-top: 1rem;">
+                        Tekan <strong>Play</strong> untuk memulai. Arahkan ular memakan kotak emas. Jangan menabrak dinding atau tubuh sendiri!
+                    </p>
+
+                    <div class="dpad">
+                        <button class="up" id="btnUp">▲</button>
+                        <button class="left" id="btnLeft">◀</button>
+                        <button class="right" id="btnRight">▶</button>
+                        <button class="down" id="btnDown">▼</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-panel" id="game-memory">
+            <div class="memory-stats">
+                <div>Langkah: <span id="memMoves">0</span></div>
+                <div>Kecocokan: <span id="memMatches">0</span>/8</div>
+            </div>
+            <div class="memory-board" id="memoryBoard"></div>
+            <div style="text-align:center; margin-top:1.5rem;">
+                <button class="btn btn-outline" onclick="initMemoryGame()">Reset Game</button>
+            </div>
+        </div>
+
+        <div class="game-panel" id="game-typing">
+            <div class="typing-area">
+                <div class="typing-text" id="typingText"></div>
+                <input type="text" class="typing-input" id="typingInput" placeholder="Mulai mengetik di sini..." autocomplete="off">
+                <div class="typing-stats">
+                    <div>WPM: <span class="val" id="typeWpm">0</span></div>
+                    <div>Akurasi: <span class="val" id="typeAcuracy">100%</span></div>
+                    <div>Waktu: <span class="val" id="typeTime">60s</span></div>
+                </div>
+                <div style="text-align:center; margin-top:1.5rem;">
+                    <button class="btn btn-outline" onclick="initTypingGame()">Reset Teks</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak">
+        <div class="contact-box">
+            <div class="section-label">Hubungi Saya</div>
+            <h2 class="section-title">Mari Berkolaborasi</h2>
+            <p>Punya pertanyaan seputar kode atau ingin berdiskusi mengenai proyek web lainnya? Kirimkan pesan sekarang.</p>
+            <a href="mailto:emailkamu@gmail.com" class="btn btn-primary">Kirim Email</a>
+
+            <a href="https://wa.me/0881027857593" target="_blank">
+                <div class="wa-icon">
+                    <span>📱 📞 </span>
+                </div>
+            </a>
+            <!-- FOOTER -->
+            <footer>
+                <p>© 2026 — <span>Portofolio Tugas Akhir</span></p>
+                <p>Dibuat dengan <span>❤</span> dan Semangat Belajar</p>
+            </footer>
+
+
+            <div class="mobile-nav" id="mobileNav">
+                <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+                <a href="#tentang" onclick="toggleMobileMenu()">Tentang</a>
+                <a href="#proyek" onclick="toggleMobileMenu()">Proyek</a>
+                <a href="#game-section" onclick="toggleMobileMenu()">Mini Game</a>
+                <a href="#kontak" onclick="toggleMobileMenu()">Kontak</a>
+            </div>
+
+            <script src="script.js"></script>
+</body>
+
+</html>

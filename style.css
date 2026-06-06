@@ -1,0 +1,1089 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --card: #1a1a1a;
+    --gold: #c9a84c;
+    --gold-light: #e8c76a;
+    --cream: #f5ede0;
+    --text: #e8e0d5;
+    --muted: #6b6460;
+    --accent: #d45f3c;
+    --green: #4caf7d;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none
+}
+
+
+/* STIL TOMBOL YOUTUBE MENGAMBANG (FLOATING BUTTON) */
+
+.youtube-float-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: #ff0000;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gold);
+}
+
+.youtube-float-btn svg {
+    width: 26px;
+    height: 26px;
+}
+
+.youtube-float-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    background: #cc0000;
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 2rem clamp(1.5rem, 6vw, 5rem);
+    border-bottom: 1px solid #2a2520;
+    overflow: hidden
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(ellipse, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+    pointer-events: none
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase
+}
+
+nav .logo {
+    color: var(--gold);
+    font-size: 0.8rem
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .3s
+}
+
+nav a:hover {
+    color: var(--gold)
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    padding: 4rem 0;
+    animation: fadeUp 1s ease both
+}
+
+.hero-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: .75rem
+}
+
+.hero-label::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold)
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: .95;
+    font-weight: 900;
+    color: var(--cream);
+    letter-spacing: -.02em
+}
+
+h1 em {
+    font-style: italic;
+    color: var(--gold)
+}
+
+.hero-desc {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .8rem 1.8rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #0d0d0d
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px)
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid #3a3530
+}
+
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold)
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid #2a2520
+}
+
+.stat span {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold)
+}
+
+.stat p {
+    font-size: .75rem;
+    color: var(--muted);
+    letter-spacing: .1em;
+    text-transform: uppercase
+}
+
+section {
+    position: relative;
+    z-index: 1;
+    padding: 6rem clamp(1.5rem, 6vw, 5rem)
+}
+
+.section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1.5rem
+}
+
+#tentang {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center
+}
+
+.about-text p {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    font-size: .95rem
+}
+
+.profile-card {
+    background: var(--card);
+    border: 1px solid #2a2520;
+    padding: 2.5rem;
+    position: relative
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 2rem;
+    width: 4rem;
+    height: 3px;
+    background: var(--gold)
+}
+
+.avatar-container {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: #141414;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: .25rem
+}
+
+.profile-role {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    color: var(--gold);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem
+}
+
+.profile-info {
+    display: grid;
+    gap: .75rem
+}
+
+.info-row {
+    display: flex;
+    gap: 1rem;
+    font-size: .85rem;
+    border-bottom: 1px solid #2a2520;
+    padding-bottom: .75rem
+}
+
+.info-row .label {
+    color: var(--muted);
+    min-width: 80px;
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem
+}
+
+.info-row .value {
+    color: var(--text)
+}
+
+
+/* STIL TOMBOL YOUTUBE DI KARTU PROFIL TENTANG SAYA */
+
+.profile-socials {
+    margin-top: 1.5rem;
+}
+
+.youtube-profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: transparent;
+    border: 1px solid #ff0000;
+    padding: 0.7rem;
+    color: #ff0000;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.youtube-profile-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.youtube-profile-btn:hover {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ffffff;
+    border-color: var(--gold);
+}
+
+#proyek {
+    background: var(--surface)
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.8rem
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid #252220;
+    padding: 2.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .3s, border-color .3s;
+}
+
+.card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #1f1d1a;
+    line-height: 1;
+    margin-bottom: .8rem;
+    user-select: none
+}
+
+.card-tag {
+    align-self: flex-start;
+    font-family: 'Space Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: .2rem .6rem;
+    margin-bottom: 1rem
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--cream);
+    margin-bottom: .75rem
+}
+
+.card-desc {
+    font-size: .85rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.project-media-gallery {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    border-top: 1px solid #2a2520;
+    padding-top: 1.2rem;
+}
+
+.project-img-item {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #332d26;
+    background: #0d0d0d;
+}
+
+.project-video-item {
+    width: 100%;
+    height: 100px;
+    background: #000;
+    border: 1px solid #332d26;
+    object-fit: cover;
+}
+
+.project-media-gallery *:only-child {
+    grid-column: span 2;
+    height: 150px;
+}
+
+#game-section {
+    background: var(--bg);
+    padding: 6rem clamp(1.5rem, 6vw, 5rem)
+}
+
+.game-tabs {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #2a2520;
+    padding-bottom: 1rem
+}
+
+.game-tab {
+    font-family: 'Space Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    padding: .6rem 1.2rem;
+    background: transparent;
+    border: 1px solid #2a2520;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .3s
+}
+
+.game-tab.active,
+.game-tab:hover {
+    background: var(--gold);
+    color: #0d0d0d;
+    border-color: var(--gold)
+}
+
+.game-panel {
+    display: none
+}
+
+.game-panel.active {
+    display: block
+}
+
+.quiz-container {
+    background: var(--card);
+    border: 1px solid #2a2520;
+    padding: 2.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative
+}
+
+.quiz-container::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold))
+}
+
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: .5rem
+}
+
+.quiz-score-display {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    color: var(--gold);
+    letter-spacing: .15em
+}
+
+.quiz-progress {
+    flex: 1;
+    height: 3px;
+    background: #2a2520;
+    margin: 0 1rem;
+    min-width: 100px
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: var(--gold);
+    transition: width .4s ease
+}
+
+.quiz-question {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    min-height: 60px
+}
+
+.quiz-options {
+    display: grid;
+    gap: .75rem
+}
+
+.quiz-option {
+    background: transparent;
+    border: 1px solid #2a2520;
+    padding: 1rem 1.2rem;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: .9rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all .25s;
+}
+
+.quiz-option:hover:not(:disabled) {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateX(4px)
+}
+
+.quiz-option.correct {
+    background: rgba(76, 175, 125, .15);
+    border-color: var(--green);
+    color: var(--green)
+}
+
+.quiz-option.wrong {
+    background: rgba(212, 95, 60, .15);
+    border-color: var(--accent);
+    color: var(--accent)
+}
+
+.quiz-feedback {
+    margin-top: 1.2rem;
+    padding: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: .75rem;
+    border-left: 3px solid var(--gold);
+    color: var(--muted);
+    display: none;
+    line-height: 1.7
+}
+
+.quiz-feedback.show {
+    display: block
+}
+
+.quiz-next {
+    margin-top: 1.5rem;
+    display: none
+}
+
+.quiz-next.show {
+    display: inline-flex
+}
+
+.quiz-result {
+    text-align: center;
+    padding: 2rem 0
+}
+
+.quiz-result-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    line-height: 1
+}
+
+.quiz-result-label {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: .5rem
+}
+
+.quiz-result-msg {
+    color: var(--muted);
+    margin: 1.5rem 0;
+    font-size: .95rem;
+    line-height: 1.7
+}
+
+.snake-wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start
+}
+
+.snake-info {
+    min-width: 180px
+}
+
+.snake-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 1rem
+}
+
+.snake-stat {
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    color: var(--muted);
+    margin-bottom: .5rem
+}
+
+.snake-stat span {
+    color: var(--gold);
+    font-size: 1.2rem
+}
+
+#snakeCanvas {
+    border: 1px solid #2a2520;
+    display: block;
+    background: #0f0f0f;
+    image-rendering: pixelated
+}
+
+.snake-controls {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+.btn-control {
+    flex: 1;
+    padding: .5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid #3a3530;
+    color: var(--text);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn-control:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.dpad {
+    display: grid;
+    grid-template-areas: ". up ." "left . right" ". down .";
+    gap: 8px;
+    margin: 1.5rem auto 0 auto;
+    width: max-content;
+}
+
+.dpad button {
+    width: 55px;
+    height: 55px;
+    background: var(--card);
+    border: 1px solid #3a3530;
+    color: var(--gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.dpad button:active {
+    background: var(--gold);
+    color: #0d0d0d;
+    transform: scale(0.92);
+}
+
+.dpad .up {
+    grid-area: up
+}
+
+.dpad .left {
+    grid-area: left
+}
+
+.dpad .right {
+    grid-area: right
+}
+
+.dpad .down {
+    grid-area: down
+}
+
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .6rem;
+    max-width: 440px;
+    margin: 0 auto
+}
+
+.mem-card {
+    aspect-ratio: 1;
+    background: var(--card);
+    border: 1px solid #2a2520;
+    cursor: pointer;
+    position: relative;
+    transition: transform .3s;
+    transform-style: preserve-3d
+}
+
+.mem-card.flipped,
+.mem-card.matched {
+    transform: rotateY(180deg)
+}
+
+.mem-card.matched {
+    border-color: var(--green)
+}
+
+.mem-face,
+.mem-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 1.8rem
+}
+
+.mem-back {
+    background: var(--card);
+    background-image: repeating-linear-gradient(45deg, #1f1d1a 0, #1f1d1a 1px, transparent 0, transparent 50%);
+    background-size: 6px 6px
+}
+
+.mem-face {
+    transform: rotateY(180deg)
+}
+
+.memory-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    color: var(--muted)
+}
+
+.memory-stats span {
+    color: var(--gold);
+    font-size: 1.1rem
+}
+
+.typing-area {
+    max-width: 640px;
+    margin: 0 auto
+}
+
+.typing-text {
+    font-family: 'Space Mono', monospace;
+    font-size: .95rem;
+    line-height: 2;
+    letter-spacing: .05em;
+    background: var(--card);
+    border: 1px solid #2a2520;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    min-height: 80px;
+    color: var(--muted);
+    position: relative
+}
+
+.typing-text .char.done {
+    color: var(--green)
+}
+
+.typing-text .char.wrong {
+    color: var(--accent);
+    background: rgba(212, 95, 60, .2)
+}
+
+.typing-text .char.cursor {
+    border-bottom: 2px solid var(--gold)
+}
+
+.typing-input {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #2a2520;
+    padding: 1rem 1.5rem;
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    font-size: .9rem;
+    outline: none;
+    transition: border-color .3s
+}
+
+.typing-input:focus {
+    border-color: var(--gold)
+}
+
+.typing-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    color: var(--muted)
+}
+
+.typing-stats .val {
+    color: var(--gold);
+    font-size: 1.2rem;
+    display: block;
+    font-family: 'Playfair Display', serif
+}
+
+.contact-box {
+    display: inline-block;
+    border: 1px solid #2a2520;
+    padding: 4rem clamp(2rem, 8vw, 6rem);
+    position: relative;
+    max-width: 640px;
+    width: 100%
+}
+
+.contact-box::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid #2a2520;
+    pointer-events: none
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin: 1rem 0 2rem;
+    line-height: 1.7
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    padding: 2rem clamp(1.5rem, 6vw, 5rem);
+    border-top: 1px solid #2a2520;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+footer p {
+    font-family: 'Space Mono', monospace;
+    font-size: .65rem;
+    color: var(--muted);
+    letter-spacing: .1em
+}
+
+footer span {
+    color: var(--gold)
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--gold);
+    transition: all .3s
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 13, .97);
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem
+}
+
+.mobile-nav.open {
+    display: flex
+}
+
+.mobile-nav a {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@media(max-width:768px) {
+    #tentang {
+        grid-template-columns: 1fr;
+        gap: 2.5rem
+    }
+    nav ul {
+        display: none
+    }
+    .nav-toggle {
+        display: flex
+    }
+    header {
+        padding: 1.5rem 1.2rem
+    }
+    h1 {
+        font-size: clamp(2.8rem, 13vw, 5rem)
+    }
+    .projects-grid {
+        grid-template-columns: 1fr
+    }
+    .project-media-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .snake-wrapper {
+        flex-direction: column;
+        align-items: center
+    }
+    #snakeCanvas {
+        width: 100% !important;
+        max-width: 320px;
+        height: auto !important;
+        aspect-ratio: 1
+    }
+    section {
+        padding: 4rem 1.2rem
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .youtube-float-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 48px;
+        height: 48px;
+    }
+    .youtube-float-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media(max-width:480px) {
+    .game-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .project-media-gallery {
+        grid-template-columns: 1fr;
+    }
+    .project-media-gallery * {
+        grid-column: span 1 !important;
+    }
+}
